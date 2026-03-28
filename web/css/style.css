@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
 body{
     background-color: #1A2235;
     color: aliceblue;
@@ -5,7 +7,8 @@ body{
     padding: 0;
     box-sizing: border-box; 
     border: none;           
-    outline: none;  
+    outline: none;
+    font-family: 'Inter', sans-serif;
 }
 
 .contenedorMaestro{
@@ -56,7 +59,6 @@ body{
 
 .barraNavegadoraUsuario{
     margin-top: auto;
-    background-color: #344152;
     border-radius: 10px;
 }
 
