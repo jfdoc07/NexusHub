@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleclientes.css">
+    <%@ page contentType="text/html" pageEncoding="UTF-8" %>
     <title>Document</title>
 </head>
 <body>
-    <h1>clientes</h1>
+    <div class="contenedorMaestro">
+        <nav class="barraNavegadora">
+            <a href="index.html"><img src="img/logoNexusHub.png" alt=""></a>
+            <ul>
+                <li><a href="index.html">Página principal</a></li>
+                <li><a href="productos.jsp">Productos</a></li>
+            </ul>
+            <div class="barraNavegadoraUsuario">
+                <a href="#">
+                    <span class="user-icon">👤</span>
+                    Administrador
+                </a>
+            </div>
+        </nav>
+        <div class="contenedorPrincipal">
+            <header>
+                <p><em>Página principal > Clientes</em></p>
+                <p><em><a href="mailto:jfcardenasd@udistrital.edu.co">¿Problemas? Contáctenos</a></em></p>
+            </header>
+            <main>
+                
+            </main>
+        </div>
+    </div>
 </body>
 </html>
