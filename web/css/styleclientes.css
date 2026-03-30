@@ -28,11 +28,12 @@ body {
     width: 15%;
     background-color: #1E293B;
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
+    flex: 1;
 }
 
-.barraNavegadora a{
+.barraNavegadora a {
     text-decoration: none;
 }
 
@@ -128,4 +129,49 @@ body {
 
 .contenedorPrincipal header p a:hover {
     text-decoration: underline;
+}
+
+.contenedorPrincipal main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tarjetaCliente {
+    width: 40%;
+    min-height: 15vh;
+    border-radius: 5px;
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: .3s;
+}
+
+.tarjetaCliente h3,p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tarjetaCliente:hover{
+    border: 1px solid #38BDF8;;
+}
+
+.tarjetaCliente nav:first-child{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+}
+
+.tarjetaCliente nav:last-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90%;
+    margin-left: 5%;
 }

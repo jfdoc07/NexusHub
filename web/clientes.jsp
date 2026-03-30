@@ -31,14 +31,20 @@
                     <p><em><a href="mailto:jfcardenasd@udistrital.edu.co">¿Problemas? Contáctenos</a></em></p>
                 </header>
                 <main>
-                    <div>
-                        <% Tienda tienda = (Tienda) application.getAttribute("tiendaUnica");
+                    <% Tienda tienda = (Tienda) application.getAttribute("tiendaUnica");
                         for (int i = 0; i < tienda.getClientela().size(); i++) {%>
-                        <h3><%= tienda.getClientela().get(i).getNombre() %></h3>
-                        <h3><%= tienda.getClientela().get(i).getNumContacto() %></h3>
-                        <h3><%= tienda.getClientela().get(i).getMembresia() %></h3>
-                        <% }%>
+                    <div class="tarjetaCliente">
+                        <nav>
+                            <h3>Datos del cliente: </h3>
+                            <p><strong>Nombre:</strong><%= tienda.getClientela().get(i).getNombre().toUpperCase()%></p>
+                            <p><strong>Número de contacto:</strong> <%= tienda.getClientela().get(i).getNumContacto()%></p>
+                            <p><strong>Membresía:</strong> <%= tienda.getClientela().get(i).getMembresia()%></p>
+                        </nav>
+                        <nav>
+                            <h3>Productos alquilados:</h3>
+                        </nav>
                     </div>
+                    <% }%>
                 </main>
             </div>
         </div>

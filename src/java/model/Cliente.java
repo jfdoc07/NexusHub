@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ public class Cliente {
     private String nombre;
     private String numContacto;
     private String membresia;
-    private List<Producto> productosAlquilados;
+    private List<Producto> productosAlquilados = new ArrayList<>();
 
     public Cliente(String nombre, String numContacto, String membresia) {
         this.nombre = nombre;
@@ -36,6 +37,10 @@ public class Cliente {
 
     public List<Producto> getProductosAlquilados() {
         return productosAlquilados;
+    }
+    
+    public void agregarProducto(Producto p){
+        productosAlquilados.add(p);
     }
     
 }
