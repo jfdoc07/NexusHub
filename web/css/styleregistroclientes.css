@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+    background-color: #1A2235;
+    color: aliceblue;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.contenedorMaestro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+.barraNavegadora {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    background-color: #1E293B;
+    margin: 0;
+    height: 100vh;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.barraNavegadora a{
+    text-decoration: none;
+}
+
+
+.barraNavegadora img {
+    width: 100%;
+    margin-top: 5%;
+}
+
+.barraNavegadora ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.barraNavegadora ul li {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin-top: 2%;
+    transition: .5s;
+}
+
+.barraNavegadora ul li:hover {
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.1) 0%, transparent 100%);
+    border-left: 4px solid #38BDF8;
+    padding-left: 16px;
+    transition: all 0.3s ease;
+}
+
+.barraNavegadora ul li a {
+    text-decoration: none;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15%;
+    padding: 12%;
+}
+
+.barraNavegadoraUsuario {
+    margin-top: auto;
+    border-radius: 10px;
+}
+
+.barraNavegadoraUsuario a {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bold;
+    border: none;
+}
+
+.contenedorPrincipal {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+.contenedorPrincipal header {
+    background-color: #1D2538;
+    border-bottom: #222A3D 1px solid;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 8vh;
+    box-shadow: 0 10px 15px -3px rgba(20, 20, 20, 0.4);
+    z-index: 10;
+}
+
+.contenedorPrincipal header p {
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contenedorPrincipal header p a {
+    text-decoration: none;
+    color: aliceblue;
+    transition: .5s;
+}
+
+.contenedorPrincipal header p a:hover {
+    text-decoration: underline;
+}
