@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styleclientes.css">
+    <link rel="stylesheet" href="css/styleregistroclientes.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="contenedorMaestro">
         <nav class="barraNavegadora">
             <a href="index.html"><img src="img/logoNexusHub.png" alt=""></a>
             <ul>
                 <li><a href="index.html">Página principal</a></li>
-                <li><a href="clientes.jsp">Volver a la gestión de clientes</a></li>
-                <li><a href="productos.jsp">Productos</a></li>
+                <li><a href="MainServlet?mostrarDatos=cliente">Volver a la gestión de clientes</a></li>
+                <li><a href="MainServlet?mostrarDatos=producto">Productos</a></li>
             </ul>
             <div class="barraNavegadoraUsuario">
                 <a href="#">
@@ -28,9 +30,26 @@
                 <p><em><a href="mailto:jfcardenasd@udistrital.edu.co">¿Problemas? Contáctenos</a></em></p>
             </header>
             <main>
-                
+                <nav class="cajaFormulario">
+                    <h2>Registre nuevos clientes</h2>
+                    <form action="MainServlet" method="post">
+                        <input type="hidden" name="modulo" value="crearCliente">
+                        <input type="text" name="nombreCliente" placeholder="Ingrese el nombre del cliente" required>
+                        <input type="number" name="numContactoCliente"
+                            placeholder="Ingrese el numero de contacto del cliente" required>
+                        <select name="membresia" id="" required>
+                            <option value="" disabled selected>Seleccione un nivel de membresía</option>
+                            <option value="normal">Normal</option>
+                            <option value="plata">Plata</option>
+                            <option value="oro">Oro</option>
+                            <option value="platino">Platino</option>
+                        </select>
+                        <input type="submit" value="Registrar cliente">
+                    </form>
+                </nav>
             </main>
         </div>
     </div>
 </body>
+
 </html>

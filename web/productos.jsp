@@ -13,7 +13,7 @@
             <a href="index.html"><img src="img/logoNexusHub.png" alt=""></a>
             <ul>
                 <li><a href="index.html">Página principal</a></li>
-                <li><a href="clientes.jsp">Clientes</a></li>
+                <li><a href="MainServlet?mostrarDatos=cliente">Clientes</a></li>
             </ul>
             <div class="barraNavegadoraUsuario">
                 <a href="#">
