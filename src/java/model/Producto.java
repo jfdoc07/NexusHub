@@ -35,7 +35,7 @@ public abstract class Producto {
         return formato;
     }
 
-    public boolean isIsAlquilado() {
+    public boolean getIsAlquilado() {
         return isAlquilado;
     }
 

@@ -11,14 +11,17 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Pelicula;
+import model.Producto;
 import model.Tienda;
+import model.Videojuego;
 
 /**
  *
  * @author Home
  */
-@WebServlet(name = "MainServlet", urlPatterns = {"/MainServlet"})
-public class MainServlet extends HttpServlet {
+@WebServlet(name = "ProductoServlet", urlPatterns = {"/ProductoServlet"})
+public class ProductoServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,14 +32,6 @@ public class MainServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    public void init() throws ServletException {
-        Tienda nexusHub = new Tienda();
-
-        // Guardamos el objeto en el contexto de la aplicación con un nombre ("key")
-        getServletContext().setAttribute("tiendaUnica", nexusHub);
-    }
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -55,13 +50,6 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        String mostrarDatos = request.getParameter("mostrarDatos");
-        if ("cliente".equals(mostrarDatos)) {
-            request.getRequestDispatcher("clientes.jsp").forward(request, response);
-            /*Recibo por get qué quiere ver el usuario y lo redirijo al jsp respectivo*/
-        } else if ("producto".equals(mostrarDatos)) {
-            request.getRequestDispatcher("productos.jsp").forward(request, response);
-        }
     }
 
     /**
@@ -76,16 +64,34 @@ public class MainServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        String modulo = request.getParameter("modulo");
-        switch (modulo) {
-            case "crearCliente": {
-                request.getRequestDispatcher("/ClienteServlet").forward(request, response);
+        Tienda tienda = (Tienda) getServletContext().getAttribute("tiendaUnica");//Recibo el objeto unico creado en el servlet principal
+
+        String elegirProducto = almacenarDato(request, "elegirProducto");
+        String nombre = almacenarDato(request, "nombre");
+        String valorSemanalP = almacenarDato(request, "valorSemanalP");
+        String valorSemanalJ = almacenarDato(request, "valorSemanalJ");
+        String formato = almacenarDato(request, "formato");
+
+        Producto producto = null;
+        switch (elegirProducto) {
+            case "pelicula": {
+                producto = new Pelicula(nombre, Integer.parseInt(valorSemanalP), formato);
                 break;
             }
-            case "crearProducto":{
-                request.getRequestDispatcher("/ProductoServlet").forward(request,response);
+            case "videojuego": {
+                producto = new Videojuego(nombre, Integer.parseInt(valorSemanalJ), formato);
+                break;
             }
         }
+        if (producto != null) {
+            tienda.agregarProducto(producto);
+        }
+        request.getRequestDispatcher("registroProductos.html").forward(request, response);
+    }
+
+    protected String almacenarDato(HttpServletRequest request, String nameForm) {//Aplico el principio DRY (Don´t Repeat Yourself)
+        String dato = request.getParameter(nameForm);
+        return dato;
     }
 
     /**

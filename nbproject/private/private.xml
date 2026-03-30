@@ -4,6 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/web/index.html</file>
+            <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/src/java/controller/MainServlet.java</file>
+            <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/src/java/controller/ClienteServlet.java</file>
+            <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/src/java/model/Cliente.java</file>
+            <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/src/java/model/IClienteProducto.java</file>
+            <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/src/java/model/ClienteProducto.java</file>
+            <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/src/java/model/Producto.java</file>
+            <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/src/java/model/Tienda.java</file>
+            <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/web/clientes.jsp</file>
         </group>
     </open-files>
 </project-private>

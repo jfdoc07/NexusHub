@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleregistroproductos.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contenedorMaestro">
+        <nav class="barraNavegadora">
+            <a href="index.html"><img src="img/logoNexusHub.png" alt=""></a>
+            <ul>
+                <li><a href="index.html">Página principal</a></li>
+                <li><a href="MainServlet?mostrarDatos=producto">Volver a la gestión de productos</a></li>
+                <li><a href="MainServlet?mostrarDatos=cliente">Clientes</a></li>
+            </ul>
+            <div class="barraNavegadoraUsuario">
+                <a href="#">
+                    <span class="user-icon">👤</span>
+                    Administrador
+                </a>
+            </div>
+        </nav>
+        <div class="contenedorPrincipal">
+            <header>
+                <p><em>Página principal > Productos > Registro de productos</em></p>
+                <p><em><a href="mailto:jfcardenasd@udistrital.edu.co">¿Problemas? Contáctenos</a></em></p>
+            </header>
+            <main>
+                <nav class="cajaFormulario">
+                    <h2>Registre nuevos productos</h2>
+                    <form action="MainServlet" method="post" onsubmit="return verificarDatos()">
+                        <input type="hidden" name="modulo" value="crearProducto">
+                        <select name="elegirProducto" id="elegirProducto" required>
+                            <option value="" disabled selected>Elija un producto para registrar</option>
+                            <option value="pelicula">Película</option>
+                            <option value="videojuego">Videojuego</option>
+                        </select>
+                        <div class="formularioPelicula" style="display: none;">
+                            <input type="text" name="nombre" placeholder="Ingrese el nombre de la película" data-grupo="pelicula">
+                            <input type="number" name="valorSemanalP" id="valorSemanalp"
+                                placeholder="Ingrese el valor semanal del alquiler" data-grupo="pelicula">
+                            <select name="formato" id="" data-grupo="pelicula">
+                                <option value="" disabled selected>Seleccione un formato para la película</option>
+                                <option value="DVD">DVD</option>
+                                <option value="Blue-Ray">Blue-Ray</option>
+                                <option value="Digital">Digital</option>
+                            </select>
+                        </div>
+                        <div class="formularioVideojuego" style="display: none;">
+                            <input type="text" name="nombre" placeholder="Ingrese el nombre del videojuego" data-grupo="videojuego">
+                            <input type="number" name="valorSemanalJ" id="valorSemanalj"
+                                placeholder="Ingrese el valor semanal del alquiler" data-grupo="videojuego">
+                            <select name="formato" id="" data-grupo="videojuego">
+                                <option value="" disabled selected>Seleccione una consola para el videojuego</option>
+                                <option value="PlayStation">PlayStation</option>
+                                <option value="Xbox">Xbox</option>
+                                <option value="Nintendo">Nintendo</option>
+                            </select>
+                        </div>
+                        <input type="submit" value="Registrar cliente">
+                    </form>
+                </nav>
+            </main>
+        </div>
+    </div>
+    <script src="js/productos.js"></script>
+</body>
+
+</html>
