@@ -67,19 +67,21 @@ public class ProductoServlet extends HttpServlet {
         Tienda tienda = (Tienda) getServletContext().getAttribute("tiendaUnica");//Recibo el objeto unico creado en el servlet principal
 
         String elegirProducto = almacenarDato(request, "elegirProducto");
-        String nombre = almacenarDato(request, "nombre");
-        String valorSemanalP = almacenarDato(request, "valorSemanalP");
-        String valorSemanalJ = almacenarDato(request, "valorSemanalJ");
+        String nombre = "";
+        String valorSemanal = "";
         String formato = almacenarDato(request, "formato");
-
         Producto producto = null;
         switch (elegirProducto) {
             case "pelicula": {
-                producto = new Pelicula(nombre, Integer.parseInt(valorSemanalP), formato);
+                nombre = request.getParameter("nombreP");
+                valorSemanal = request.getParameter("valorSemanalP");
+                producto = new Pelicula(nombre, Integer.parseInt(valorSemanal), formato);
                 break;
             }
             case "videojuego": {
-                producto = new Videojuego(nombre, Integer.parseInt(valorSemanalJ), formato);
+                nombre = request.getParameter("nombreJ");
+                valorSemanal = request.getParameter("valorSemanalJ");
+                producto = new Videojuego(nombre, Integer.parseInt(valorSemanal), formato);
                 break;
             }
         }

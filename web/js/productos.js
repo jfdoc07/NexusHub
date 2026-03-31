@@ -5,8 +5,10 @@ document.getElementById('elegirProducto').addEventListener('change', function (e
     formularioVideojuego.style.display = "none";
     if (event.target.value == 'pelicula') {
         formularioPelicula.style.display = "flex";
+        formularioVideojuego.style.display = "none";
     } else if (event.target.value == 'videojuego') {
         formularioVideojuego.style.display = "flex";
+        formularioPelicula.style.display = "none";
     }
 });
 
