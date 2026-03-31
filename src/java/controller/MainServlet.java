@@ -56,11 +56,31 @@ public class MainServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         String mostrarDatos = request.getParameter("mostrarDatos");
-        if ("cliente".equals(mostrarDatos)) {
-            request.getRequestDispatcher("clientes.jsp").forward(request, response);
-            /*Recibo por get qué quiere ver el usuario y lo redirijo al jsp respectivo*/
-        } else if ("producto".equals(mostrarDatos)) {
-            request.getRequestDispatcher("productos.jsp").forward(request, response);
+        switch (mostrarDatos) {
+            case "cliente": {
+                request.getRequestDispatcher("clientes.jsp").forward(request, response);
+                /*Recibo por get qué quiere ver el usuario y lo redirijo al jsp respectivo*/
+                break;
+            }
+            case "producto": {
+                request.getRequestDispatcher("productos.jsp").forward(request, response);
+                break;
+            }
+            case "gestionaralquileres": {
+                String ID = request.getParameter("id");
+                Tienda tienda = (Tienda) getServletContext().getAttribute("tiendaUnica");//Recupero el objeto de tienda
+                model.Cliente c = null;
+                for (int i = 0; i < tienda.getClientela().size(); i++) {
+                    if (tienda.getClientela().get(i).getID().equals(ID)) {
+                        c = tienda.getClientela().get(i);
+                        break;
+                    }
+                }
+                if (c != null) {
+                    getServletContext().setAttribute("clienteAGestionar", c);
+                }
+                request.getRequestDispatcher("gestionarAlquileres.jsp").forward(request, response);
+            }
         }
     }
 
@@ -82,8 +102,8 @@ public class MainServlet extends HttpServlet {
                 request.getRequestDispatcher("/ClienteServlet").forward(request, response);
                 break;
             }
-            case "crearProducto":{
-                request.getRequestDispatcher("/ProductoServlet").forward(request,response);
+            case "crearProducto": {
+                request.getRequestDispatcher("/ProductoServlet").forward(request, response);
             }
         }
     }

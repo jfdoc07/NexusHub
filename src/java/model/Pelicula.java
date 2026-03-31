@@ -15,8 +15,27 @@ public class Pelicula extends Producto{
     }
 
     @Override
-    public double calcularAlquiler(int valorAlquiler, double valorDescuento, int diasAlquilados) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public double calcularAlquiler(String membresia, int semanasAlquiladas) {
+        double descuentoMembresia = 0;
+        switch(membresia){
+            case "normal":{
+                descuentoMembresia = 1;
+                break;
+            }
+            case "plata":{
+                descuentoMembresia = 0.95;
+                break;
+            }
+            case "oro":{
+                descuentoMembresia = 0.9;
+                break;
+            }
+            case "platino":{
+                descuentoMembresia = 0.8;
+                break;
+            }
+        }
+        return this.valorAlquiler * descuentoMembresia * semanasAlquiladas;
     }
     
 }

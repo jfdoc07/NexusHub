@@ -8,15 +8,34 @@ package model;
  *
  * @author Home
  */
-public class Videojuego extends Producto{
+public class Videojuego extends Producto {
 
     public Videojuego(String nombre, int valorAlquiler, String formato) {
         super(nombre, valorAlquiler, formato);
     }
 
     @Override
-    public double calcularAlquiler(int valorAlquiler, double valorDescuento, int diasAlquilados) {
-       return valorAlquiler * valorDescuento * diasAlquilados;
+    public double calcularAlquiler(String membresia, int semanasAlquiladas) {
+        double descuentoMembresia = 0;
+        switch (membresia) {
+            case "normal": {
+                descuentoMembresia = 1;
+                break;
+            }
+            case "plata": {
+                descuentoMembresia = 0.95;
+                break;
+            }
+            case "oro": {
+                descuentoMembresia = 0.85;
+                break;
+            }
+            case "platino": {
+                descuentoMembresia = 0.75;
+                break;
+            }
+        }
+        return this.valorAlquiler * descuentoMembresia * semanasAlquiladas;
     }
-    
+
 }

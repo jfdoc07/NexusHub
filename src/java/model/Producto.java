@@ -10,12 +10,12 @@ package model;
  */
 public abstract class Producto {
     
-    private String nombre;
-    private int valorAlquiler;
-    private String formato;
-    private boolean isAlquilado = false;
+    protected String nombre;
+    protected int valorAlquiler;
+    protected String formato;
+    protected boolean isAlquilado = false;
     
-    public abstract double calcularAlquiler(int valorAlquiler, double valorDescuento, int diasAlquilados);
+    public abstract double calcularAlquiler(String membresia, int semanasAlquiladas);
 
     public Producto(String nombre, int valorAlquiler, String formato) {
         this.nombre = nombre;

@@ -15,7 +15,7 @@ public class ClienteProducto implements IClienteProducto{
         producto.setIsAlquilado(true);
         cliente.getProductosAlquilados().add(producto);
     }
-
+    
     @Override
     public void devolverProducto(Cliente cliente, Producto producto) {
         producto.setIsAlquilado(false);

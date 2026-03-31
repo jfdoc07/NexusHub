@@ -5,6 +5,7 @@
 package model;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  *
@@ -12,17 +13,23 @@ import java.util.List;
  */
 public class Cliente {
     
+    private String ID;
     private String nombre;
     private String numContacto;
     private String membresia;
     private List<Producto> productosAlquilados = new ArrayList<>();
 
     public Cliente(String nombre, String numContacto, String membresia) {
+        this.ID = UUID.randomUUID().toString();
         this.nombre = nombre;
         this.numContacto = numContacto;
         this.membresia = membresia;
     }
 
+    public String getID() {
+        return ID;
+    }
+    
     public String getNombre() {
         return nombre;
     }
