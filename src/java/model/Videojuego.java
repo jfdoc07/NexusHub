@@ -15,7 +15,7 @@ public class Videojuego extends Producto {
     }
 
     @Override
-    public double calcularAlquiler(String membresia, int semanasAlquiladas) {
+    public double calcularAlquiler(String membresia) {
         double descuentoMembresia = 0;
         switch (membresia) {
             case "normal": {
@@ -35,7 +35,7 @@ public class Videojuego extends Producto {
                 break;
             }
         }
-        return this.valorAlquiler * descuentoMembresia * semanasAlquiladas;
+        return this.valorAlquiler * descuentoMembresia;
     }
 
 }

@@ -15,7 +15,7 @@ public abstract class Producto {
     protected String formato;
     protected boolean isAlquilado = false;
     
-    public abstract double calcularAlquiler(String membresia, int semanasAlquiladas);
+    public abstract double calcularAlquiler(String membresia);
 
     public Producto(String nombre, int valorAlquiler, String formato) {
         this.nombre = nombre;
