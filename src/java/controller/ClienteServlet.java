@@ -48,11 +48,6 @@ public class ClienteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        String gestionarAlquileres = request.getParameter("gestionarAlquileres");
-        if ("gestionaralquileres".equals(gestionarAlquileres)){
-            String ID = request.getParameter("id");
-            request.getRequestDispatcher("gestionarAlquileres.jsp").forward(request, response);
-        }
         String realizarAcciones = request.getParameter("realizarAcciones");
         if ("alquilar".equals(realizarAcciones)){
             
