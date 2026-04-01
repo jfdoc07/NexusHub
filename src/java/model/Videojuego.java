@@ -24,14 +24,17 @@ public class Videojuego extends Producto {
             }
             case "plata": {
                 descuentoMembresia = 0.95;
+                /*Descuento del 5%*/
                 break;
             }
             case "oro": {
                 descuentoMembresia = 0.85;
+                /*Descuento del 15%*/
                 break;
             }
             case "platino": {
                 descuentoMembresia = 0.75;
+                /*Descuento del 25%*/
                 break;
             }
         }

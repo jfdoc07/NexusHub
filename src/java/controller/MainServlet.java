@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.ClienteProducto;
 import model.Tienda;
 
 /**
@@ -20,6 +21,8 @@ import model.Tienda;
 @WebServlet(name = "MainServlet", urlPatterns = {"/MainServlet"})
 public class MainServlet extends HttpServlet {
 
+    private Tienda nexusHub;
+    private ClienteProducto cP;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,10 +34,10 @@ public class MainServlet extends HttpServlet {
      */
     @Override
     public void init() throws ServletException {
-        Tienda nexusHub = new Tienda();
-
+        this.nexusHub = new Tienda();
         // Guardamos el objeto en el contexto de la aplicación con un nombre ("key")
         getServletContext().setAttribute("tiendaUnica", nexusHub);
+        this.cP = new ClienteProducto(this.nexusHub);
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -81,6 +84,12 @@ public class MainServlet extends HttpServlet {
                 }
                 request.getRequestDispatcher("gestionarAlquileres.jsp").forward(request, response);
             }
+            case "devolverProducto":{
+                String clienteID = request.getParameter("clienteID");
+                String productoaDevolverID = request.getParameter("productoID");
+                cP.devolverProducto(clienteID, productoaDevolverID);
+                request.getRequestDispatcher("clientes.jsp").forward(request, response);
+            }
         }
     }
 
@@ -104,6 +113,14 @@ public class MainServlet extends HttpServlet {
             }
             case "crearProducto": {
                 request.getRequestDispatcher("/ProductoServlet").forward(request, response);
+                break;
+            }
+            case "agregarProducto": {
+                String clienteID = request.getParameter("clienteID");
+                String productoaAgregarID = request.getParameter("productoaAgregarID");
+                cP.añadirProducto(clienteID, productoaAgregarID);
+                request.getRequestDispatcher("clientes.jsp").forward(request, response);
+                break;
             }
         }
     }

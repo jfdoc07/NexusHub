@@ -158,7 +158,6 @@ main .cajaFormulario form {
     gap: 20px;
 }
 
-/* inputs y select */
 main .cajaFormulario form input,
 main .cajaFormulario form select {
     background: transparent;
@@ -171,7 +170,6 @@ main .cajaFormulario form select {
     transition: 0.3s ease;
 }
 
-main .cajaFormulario form input:focus,
 main .cajaFormulario form select:focus {
     border-bottom: 2px solid #38bdf8;
 }

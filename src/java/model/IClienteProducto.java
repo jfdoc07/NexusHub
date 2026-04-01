@@ -10,7 +10,7 @@ package model;
  */
 public interface IClienteProducto {
     
-    public void añadirProducto(Cliente cliente, Producto producto);
-    public void devolverProducto(Cliente cliente, Producto producto);
+    public void añadirProducto(String clienteID, String productoID);
+    public void devolverProducto(String clienteID, String productoID);
     
 }

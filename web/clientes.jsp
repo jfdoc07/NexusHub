@@ -41,7 +41,6 @@
                             <p><strong>Membresía:</strong> <%= tienda.getClientela().get(i).getMembresia()%></p>
                         </nav>
                         <nav>
-                            <h3>Productos alquilados:</h3>
                             <a href="MainServlet?mostrarDatos=gestionaralquileres&id=<%=tienda.getClientela().get(i).getID()%>"><button>Gestionar alquileres</button></a>
                         </nav>
                     </div>

@@ -4,12 +4,15 @@
  */
 package model;
 
+import java.util.UUID;
+
 /**
  *
  * @author Home
  */
 public abstract class Producto {
     
+    protected String ID;
     protected String nombre;
     protected int valorAlquiler;
     protected String formato;
@@ -18,11 +21,16 @@ public abstract class Producto {
     public abstract double calcularAlquiler(String membresia);
 
     public Producto(String nombre, int valorAlquiler, String formato) {
+        this.ID = UUID.randomUUID().toString();
         this.nombre = nombre;
         this.valorAlquiler = valorAlquiler;
         this.formato = formato;
     }
 
+    public String getID() {
+        return ID;
+    }
+    
     public String getNombre() {
         return nombre;
     }

@@ -24,14 +24,17 @@ public class Pelicula extends Producto{
             }
             case "plata":{
                 descuentoMembresia = 0.95;
+                /*Descuento del 5%*/
                 break;
             }
             case "oro":{
                 descuentoMembresia = 0.9;
+                /*Descuento del 10%*/
                 break;
             }
             case "platino":{
                 descuentoMembresia = 0.8;
+                /*Descuento del 20%*/
                 break;
             }
         }
