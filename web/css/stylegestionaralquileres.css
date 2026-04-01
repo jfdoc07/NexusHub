@@ -209,6 +209,7 @@ display: inline-block;
     border: none;
     margin-top: 3%;
     margin-bottom: 3%;
+    width: 100%;
 }
 
 td a button:hover {
