@@ -185,6 +185,7 @@ main .cajaFormulario form select option {
 main .cajaFormulario form input[type="submit"] {
     display: inline-block;
     background-color: #334155;
+    border: none;
     color: #F8FAFC;
     padding: 10px 20px;
     border-radius: 8px;

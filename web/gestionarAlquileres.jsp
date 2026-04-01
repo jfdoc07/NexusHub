@@ -100,8 +100,7 @@
                                                         <option value="<%= tienda.getStock().get(i).getID()%>">
                                                             <%= tienda.getStock().get(i).getNombre().toUpperCase()%>
                                                                 (<%=
-                                                                    tienda.getStock().get(i).getClass().getSimpleName()%>
-                                                                    )
+                                                                    tienda.getStock().get(i).getClass().getSimpleName()%>)
                                                         </option>
                                                         <%} }%>
                                                 </select>
