@@ -47,18 +47,6 @@ public abstract class Producto {
         return isAlquilado;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setValorAlquiler(int valorAlquiler) {
-        this.valorAlquiler = valorAlquiler;
-    }
-
-    public void setFormato(String formato) {
-        this.formato = formato;
-    }
-
     public void setIsAlquilado(boolean isAlquilado) {
         this.isAlquilado = isAlquilado;
     }
