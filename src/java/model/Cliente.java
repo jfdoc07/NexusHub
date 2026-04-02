@@ -46,8 +46,4 @@ public class Cliente {
         return productosAlquilados;
     }
     
-    public void agregarProducto(Producto p){
-        productosAlquilados.add(p);
-    }
-    
 }

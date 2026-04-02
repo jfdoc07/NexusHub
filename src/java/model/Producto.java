@@ -11,14 +11,12 @@ import java.util.UUID;
  * @author Home
  */
 public abstract class Producto {
-    
+
     protected String ID;
     protected String nombre;
     protected int valorAlquiler;
     protected String formato;
     protected boolean isAlquilado = false;
-    
-    public abstract double calcularAlquiler(String membresia);
 
     public Producto(String nombre, int valorAlquiler, String formato) {
         this.ID = UUID.randomUUID().toString();
@@ -27,10 +25,12 @@ public abstract class Producto {
         this.formato = formato;
     }
 
+    public abstract double calcularAlquiler(String membresia);
+
     public String getID() {
         return ID;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -50,5 +50,5 @@ public abstract class Producto {
     public void setIsAlquilado(boolean isAlquilado) {
         this.isAlquilado = isAlquilado;
     }
-    
+
 }
