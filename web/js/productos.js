@@ -22,11 +22,9 @@ function verificarDatos() {
         return false;
     }
     for (let campo of campos) {
-        if (campo.value.trim() === "") {
+        if (campo.value.trim() == "") {
             alert("El campo señalado no debe estar vacío");
             campo.style.borderBottom = "1px solid red";
-            campo.focus();
-            campo.select();
             return false;
         }
     }
