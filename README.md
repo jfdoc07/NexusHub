@@ -8,8 +8,8 @@ Sistema de gestión integral desarrollado en Java bajo el patrón MVC (Modelo-Vi
 - Puerto: 8080
 
 > [!IMPORTANT]
-  Si ya tiene ocupado el puerto 8080, puede configurar el servidor para que el programa se ejecute en el puerto 8084.
-- IDE recomendado: NetBeans IDE 25
+  Si ya tienes ocupado el puerto 8080, puedes configurar el servidor para que el programa se ejecute en el puerto 8084.
+- IDE recomendado: Apache NetBeans IDE 25
 
 > [!TIP]
   Para la correcta ejecución del programa y no presentar conflictos, es preferible priorizar la versión del Tomcat con su IDE.
@@ -51,3 +51,27 @@ La separación en los paquetes controller y model asegura el cumplimiento del pr
 
 > [!TIP]
 Los archivos con extensión .jsp contienen la lógica dinámica que interactúa con los Servlets, mientras que los .html se utilizan para formularios estáticos de registro.
+
+## Instalación y registro:
+
+### 1. Prerrequisitos
+Antes de comenzar, asegúrate de tener instalado:
+* **Java Development Kit (JDK) 17** o superior (necesario para Jakarta EE 11).
+* **Apache Tomcat 11.0.18**.
+* **NetBeans IDE** (o tu IDE de preferencia con soporte para Java Web).
+
+### 2. Clonar el Repositorio
+Ejecuta el siguiente comando en tu terminal para descargar el código fuente:
+```bash
+git clone [https://github.com/jfdoc07/NexusHub.git](https://github.com/jfdoc07/NexusHub.git)
+```
+### 3. Ejecutar el programa
+Abre tu IDE, abre el archivo que descargaste y ejecútalo.
+
+> [!WARNING]
+Para que el programa se ejecute de manera correcta es necesario configurar el Apache Tomcat de manera previa.
+
+## Autor
+* Juan Fernando Cárdenas
+* GitHub: [jfdoc07](github.com/jfdoc07)
+* Rol: Estudiante de Ingeniería de Sistemas, Universidad Distrital Francisco José de Caldas
