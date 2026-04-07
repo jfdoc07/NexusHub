@@ -3,7 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/web/index.html</file>
             <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/src/java/controller/MainServlet.java</file>
             <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/src/java/controller/ClienteServlet.java</file>
@@ -18,13 +17,6 @@
             <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/src/java/model/Videojuego.java</file>
             <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/web/productos.jsp</file>
             <file>file:/C:/Users/Home/Desktop/Universidad/trabajos%20de%20la%20u/trabajos%20programación%20avanzada/NexusHub/web/gestionarAlquileres.jsp</file>
-=======
-            <file>file:/C:/Users/jfcar/OneDrive/Desktop/Universidad/trabajos%20programación%20avanzada/NexusHub/src/java/model/ClienteProducto.java</file>
-            <file>file:/C:/Users/jfcar/OneDrive/Desktop/Universidad/trabajos%20programación%20avanzada/NexusHub/src/java/model/Producto.java</file>
-            <file>file:/C:/Users/jfcar/OneDrive/Desktop/Universidad/trabajos%20programación%20avanzada/NexusHub/src/java/model/Pelicula.java</file>
-            <file>file:/C:/Users/jfcar/OneDrive/Desktop/Universidad/trabajos%20programación%20avanzada/NexusHub/src/java/controller/ClienteServlet.java</file>
-            <file>file:/C:/Users/jfcar/OneDrive/Desktop/Universidad/trabajos%20programación%20avanzada/NexusHub/src/java/controller/MainServlet.java</file>
->>>>>>> 8112eb7d04c29c14b96b577c6013ddcd155feede
         </group>
     </open-files>
 </project-private>
