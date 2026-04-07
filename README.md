@@ -13,6 +13,7 @@ Sistema de gestión integral desarrollado en Java bajo el patrón MVC (Modelo-Vi
 
 > [!TIP]
   Para la correcta ejecución del programa y no presentar conflictos, es preferible priorizar la versión del Tomcat con su IDE.
+
 ## Estructura del Proyecto
 
 El proyecto sigue el patrón arquitectónico **MVC**, organizando la lógica y la interfaz de la siguiente manera:
