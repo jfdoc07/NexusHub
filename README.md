@@ -41,6 +41,7 @@ NexusHub/
 │       ├── ☕ Tienda.java
 │       └── ☕ Videojuego.java
 └── ⚙️ Configuration Files/          # Archivos de despliegue y contexto
+```
 [!NOTE]
 La separación en los paquetes controller y model asegura el cumplimiento del principio de Responsabilidad Única, facilitando el mantenimiento del sistema NexusHub.
 
