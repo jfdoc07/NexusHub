@@ -7,8 +7,10 @@ package model;
 import java.util.UUID;
 
 /**
- *
- * @author Home
+ * Clase de entidad que representa un producto en NexusHub.
+ * Almacena datos básicos, calcula el alquiler del producto y es un modelo para 
+ * las concreciones de todos los productos que tiene NexusHub.
+ * @author Juan Fernando Cárdenas Duque.
  */
 public abstract class Producto {
 
@@ -26,6 +28,7 @@ public abstract class Producto {
     }
 
     public abstract double calcularAlquiler(String membresia);
+    /*Metodo que los hijos implementarán, para realizar ligadura dinámica.*/
 
     public String getID() {
         return ID;

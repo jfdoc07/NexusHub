@@ -17,8 +17,12 @@ import model.Tienda;
 import model.Videojuego;
 
 /**
- *
- * @author Home
+ * Nombre del proyecto: NexusHub
+ * Servlet encargado de la creación de productos a partir de formularios previos.
+ ** Descripción del entorno:
+ * Servidor: Apache Tomcat 11.0.18
+ * Puerto: 8080
+ * @author Juan Fernando Cárdenas Duque.
  */
 @WebServlet(name = "ProductoServlet", urlPatterns = {"/ProductoServlet"})
 public class ProductoServlet extends HttpServlet {
@@ -64,8 +68,7 @@ public class ProductoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        Tienda tienda = (Tienda) getServletContext().getAttribute("tiendaUnica");//Recibo el objeto unico creado en el servlet principal
-
+        Tienda tienda = (Tienda) getServletContext().getAttribute("tiendaUnica");
         String elegirProducto = almacenarDato(request, "elegirProducto");
         String nombre = "";
         String valorSemanal = "";
@@ -75,23 +78,29 @@ public class ProductoServlet extends HttpServlet {
             case "pelicula": {
                 nombre = request.getParameter("nombreP");
                 valorSemanal = request.getParameter("valorSemanalP");
-                producto = new Pelicula(nombre, Integer.parseInt(valorSemanal), formato);
+                /*Dependiendo del producto elegido, se asigna lo enviado por el
+                formulario para construir el objeto.*/
+                producto = new Pelicula(nombre, Integer.parseInt(valorSemanal),
+                                        formato);
                 break;
             }
             case "videojuego": {
                 nombre = request.getParameter("nombreJ");
                 valorSemanal = request.getParameter("valorSemanalJ");
-                producto = new Videojuego(nombre, Integer.parseInt(valorSemanal), formato);
+                producto = new Videojuego(nombre, Integer.parseInt(valorSemanal),
+                                          formato);
                 break;
             }
         }
         if (producto != null) {
             tienda.agregarProducto(producto);
         }
-        request.getRequestDispatcher("registroProductos.html").forward(request, response);
+        request.getRequestDispatcher("registroProductos.html").forward(request, 
+                                                                       response);
     }
 
-    protected String almacenarDato(HttpServletRequest request, String nameForm) {//Aplico el principio DRY (Don´t Repeat Yourself)
+    protected String almacenarDato(HttpServletRequest request, String nameForm) {
+        /*Principio DRY*/
         String dato = request.getParameter(nameForm);
         return dato;
     }
