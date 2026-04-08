@@ -15,14 +15,20 @@ import model.ClienteProducto;
 import model.Tienda;
 
 /**
- *
- * @author Home
+ * Nombre del proyecto: NexusHub
+ * Servlet encargado de la gestión de usuarios y productos en NexusHub,
+ * comunicándose con las clases respectivas.
+ ** Descripción del entorno:
+ * Servidor: Apache Tomcat 11.0.18
+ * Puerto: 8080
+ * @author Juan Fernando Cárdenas Duque.
  */
 @WebServlet(name = "MainServlet", urlPatterns = {"/MainServlet"})
 public class MainServlet extends HttpServlet {
 
     private Tienda nexusHub;
     private ClienteProducto cP;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,7 +41,7 @@ public class MainServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         this.nexusHub = new Tienda();
-        // Guardamos el objeto en el contexto de la aplicación con un nombre ("key")
+        /*Guardamos el objeto en el contexto de la aplicación con un nombre ("key")*/
         getServletContext().setAttribute("tiendaUnica", nexusHub);
         this.cP = new ClienteProducto(this.nexusHub);
     }
@@ -60,21 +66,25 @@ public class MainServlet extends HttpServlet {
         processRequest(request, response);
         String mostrarDatos = request.getParameter("mostrarDatos");
         switch (mostrarDatos) {
+            /*Recibo por get qué quiere ver el usuario y lo redirijo al jsp respectivo*/
             case "cliente": {
-                request.getRequestDispatcher("clientes.jsp").forward(request, response);
-                /*Recibo por get qué quiere ver el usuario y lo redirijo al jsp respectivo*/
+                request.getRequestDispatcher("clientes.jsp").forward(request,
+                        response);
                 break;
             }
             case "producto": {
-                request.getRequestDispatcher("productos.jsp").forward(request, response);
+                request.getRequestDispatcher("productos.jsp").forward(request, 
+                        response);
                 break;
             }
             case "gestionaralquileres": {
                 String ID = request.getParameter("id");
-                Tienda tienda = (Tienda) getServletContext().getAttribute("tiendaUnica");//Recupero el objeto de tienda
+                Tienda tienda = (Tienda) getServletContext().getAttribute("tiendaUnica");
+                /*Recupero el objeto global de tienda*/
                 model.Cliente c = null;
                 for (int i = 0; i < tienda.getClientela().size(); i++) {
                     if (tienda.getClientela().get(i).getID().equals(ID)) {
+                        /*Busco por ID el usuario solicitado*/
                         c = tienda.getClientela().get(i);
                         break;
                     }
@@ -84,7 +94,7 @@ public class MainServlet extends HttpServlet {
                 }
                 request.getRequestDispatcher("gestionarAlquileres.jsp").forward(request, response);
             }
-            case "devolverProducto":{
+            case "devolverProducto": {
                 String clienteID = request.getParameter("clienteID");
                 String productoaDevolverID = request.getParameter("productoID");
                 cP.devolverProducto(clienteID, productoaDevolverID);

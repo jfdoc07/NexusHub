@@ -5,8 +5,9 @@
 package model;
 
 /**
- *
- * @author Home
+ * Clase de entidad que representa una película en NexusHub. Es la concreción de
+ * la clase abstracta Producto.
+ * @author Juan Fernando Cárdenas Duque.
  */
 public class Pelicula extends Producto{
 
@@ -16,6 +17,7 @@ public class Pelicula extends Producto{
 
     @Override
     public double calcularAlquiler(String membresia) {
+    /*Dependiendo la membresía del usuario, calcula un descuento u otro.*/
         double descuentoMembresia = 0;
         switch(membresia){
             case "normal":{

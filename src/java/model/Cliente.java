@@ -8,8 +8,9 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- *
- * @author Home
+ * Clase entidad que representa un usuario en NexusHub.
+ * Nota: Esta clase requiere que existan los servlets que utilizan sus métodos.
+ * @author Juan Fernando Cárdenas Duque.
  */
 public class Cliente {
     

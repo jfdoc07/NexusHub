@@ -5,8 +5,8 @@
 package model;
 
 /**
- *
- * @author Home
+ * Interfaz encargada de crear un modelo que concretará ClienteProducto.
+ * @author Juan Fernando Cárdenas Duque.
  */
 public interface IClienteProducto {
     

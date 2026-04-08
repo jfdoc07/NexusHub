@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author Home
+ * Clase de entidad que representa la tienda completa, guardando clientes y
+ * productos previamente creados.
+ * Nota: Esta clase requiere que existan los servlets que utilizan sus métodos.
+ * @author Juan Fernando Cárdenas Duque.
  */
 public class Tienda {
 

@@ -15,8 +15,13 @@ import model.Cliente;
 import model.Tienda;
 
 /**
- *
- * @author Home
+ * Nombre del proyecto: NexusHub
+ * Servlet encargado de la creación de usuarios a partir de datos enviados
+ * desde formularios previos.
+ ** Descripción del entorno:
+ * Servidor: Apache Tomcat 11.0.18
+ * Puerto: 8080
+ * @author Juan Fernando Cárdenas Duque.
  */
 @WebServlet(name = "ClienteServlet", urlPatterns = {"/ClienteServlet"})
 public class ClienteServlet extends HttpServlet {
@@ -68,17 +73,21 @@ public class ClienteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        Tienda tienda = (Tienda) getServletContext().getAttribute("tiendaUnica");//Recibo el objeto unico creado en el servlet principal
-
+        Tienda tienda = (Tienda) getServletContext().getAttribute("tiendaUnica");
+        /*Recupero el objeto global de tienda*/
         String nombreCliente = almacenarDato(request, "nombreCliente");
         String numContactoCliente = almacenarDato(request, "numContactoCliente");
         String membresia = almacenarDato(request, "membresia");
         Cliente cliente = new Cliente(nombreCliente, numContactoCliente, membresia);
         tienda.agregarCliente(cliente);
-        request.getRequestDispatcher("registroClientes.html").forward(request, response);
+        /*Respetando el SOLID, el cliente es agregado por tienda y no desde el
+        servlet.*/
+        request.getRequestDispatcher("registroClientes.html").forward(request, 
+                                                                      response);
     }
 
-    protected String almacenarDato(HttpServletRequest request, String nameForm) {//Aplico el principio DRY (Don´t Repeat Yourself)
+    protected String almacenarDato(HttpServletRequest request, String nameForm) {
+        /*Principio DRY*/
         String dato = request.getParameter(nameForm);
         return dato;
     }
