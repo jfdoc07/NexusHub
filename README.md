@@ -23,7 +23,7 @@ NexusHub/
 ├── 🌐 Web Pages/                   # Capa de Vista (Frontend)
 │   ├── 📁 css/                      # Estilos visuales
 │   ├── 📁 img/                      # Recursos gráficos
-│   ├── 📁 js/                       # Scripts de cliente
+│   ├── 📁 js/                       # JavaScript del registro de productos
 │   ├── 📄 clientes.jsp              # Gestión de clientes
 │   ├── 📄 gestionarAlquileres.jsp   # Lógica de alquileres
 │   ├── 📄 index.html                # Punto de entrada
