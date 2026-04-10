@@ -63,7 +63,7 @@ Antes de comenzar, asegúrate de tener instalado:
 ### 2. Clonar el Repositorio
 Ejecuta el siguiente comando en tu terminal para descargar el código fuente:
 ```bash
-git clone [https://github.com/jfdoc07/NexusHub.git](https://github.com/jfdoc07/NexusHub.git)
+git clone https://github.com/jfdoc07/NexusHub.git
 ```
 ### 3. Ejecutar el programa
 Abre tu IDE, abre el archivo que descargaste y ejecútalo.
