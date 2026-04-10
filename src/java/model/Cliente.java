@@ -46,6 +46,5 @@ public class Cliente {
     public List<Producto> getProductosAlquilados() {
         return productosAlquilados;
     }
-    /*jeison*/
     
 }
