@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="model.Tienda"%>
 <%@page import="model.Cliente"%>
 <!DOCTYPE html>
@@ -31,17 +32,21 @@
                     <p><em><a href="mailto:jfcardenasd@udistrital.edu.co">¿Problemas? Contáctenos</a></em></p>
                 </header>
                 <main>
-                    <% Tienda tienda = (Tienda) application.getAttribute("tiendaUnica");
-                        for (int i = 0; i < tienda.getClientela().size(); i++) {%>
+                    <% List<Cliente> listaClientes = (List<Cliente>) application.getAttribute("listaDeClientes");
+                        for (int i = 0; i < listaClientes.size(); i++) {%>
                     <div class="tarjetaCliente">
                         <nav>
                             <h3>Datos del cliente: </h3>
-                            <p><strong>Nombre:</strong><%= tienda.getClientela().get(i).getNombre().toUpperCase()%></p>
-                            <p><strong>Número de contacto:</strong> <%= tienda.getClientela().get(i).getNumContacto()%></p>
-                            <p><strong>Membresía:</strong> <%= tienda.getClientela().get(i).getMembresia()%></p>
+                            <p><strong>Nombre:</strong><%= listaClientes.get(i).getNombre().toUpperCase()%></p>
+                            <p><strong>Número de contacto:</strong> <%= listaClientes.get(i).getNumContacto()%></p>
+                            <p><strong>Membresía:</strong> <%= listaClientes.get(i).getMembresia()%></p>
                         </nav>
                         <nav>
-                            <a href="MainServlet?mostrarDatos=gestionaralquileres&id=<%=tienda.getClientela().get(i).getID()%>"><button>Gestionar alquileres</button></a>
+                            <a href="MainServlet?mostrarDatos=gestionaralquileres&id=<%=listaClientes.get(i).getID()%>"><button>Gestionar alquileres</button></a>
+                            <form action="EliminarCliente" method="post">
+                                <input type="hidden" name="id" value="<%=listaClientes.get(i).getID()%>">
+                                <button onclick="return confirm('Está seguro de eliminar a este usuario? Esta acción no se puede deshacer.')">Eliminar cliente</button>
+                            </form>
                         </nav>
                     </div>
                     <% }%>

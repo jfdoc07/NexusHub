@@ -4,6 +4,7 @@
  */
 package controller;
 
+import database.DBclientes;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -11,16 +12,17 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
+import model.Cliente;
 import model.ClienteProducto;
 import model.Tienda;
 
 /**
- * Nombre del proyecto: NexusHub
- * Servlet encargado de la gestión de usuarios y productos en NexusHub,
- * comunicándose con las clases respectivas.
- ** Descripción del entorno:
- * Servidor: Apache Tomcat 11.0.18
- * Puerto: 8080
+ * Nombre del proyecto: NexusHub Servlet encargado de la gestión de usuarios y
+ * productos en NexusHub, comunicándose con las clases respectivas. *
+ * Descripción del entorno: Servidor: Apache Tomcat 11.0.18 Puerto: 8080
+ *
  * @author Juan Fernando Cárdenas Duque.
  */
 @WebServlet(name = "MainServlet", urlPatterns = {"/MainServlet"})
@@ -68,12 +70,16 @@ public class MainServlet extends HttpServlet {
         switch (mostrarDatos) {
             /*Recibo por get qué quiere ver el usuario y lo redirijo al jsp respectivo*/
             case "cliente": {
+                DBclientes dbClientes = new DBclientes();
+                List<Cliente> listaClientes = dbClientes.obtenerClientes();
+                /*Recupero la lista*/
+                getServletContext().setAttribute("listaDeClientes", listaClientes);
                 request.getRequestDispatcher("clientes.jsp").forward(request,
                         response);
                 break;
             }
             case "producto": {
-                request.getRequestDispatcher("productos.jsp").forward(request, 
+                request.getRequestDispatcher("productos.jsp").forward(request,
                         response);
                 break;
             }

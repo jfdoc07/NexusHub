@@ -176,7 +176,7 @@ body {
     margin-left: 5%;
 }
 
-.tarjetaCliente nav:last-child a button{
+.tarjetaCliente nav:last-child button{
 display: inline-block;
     background-color: #334155;
     color: #F8FAFC;
@@ -192,6 +192,6 @@ display: inline-block;
     margin-bottom: 3%;
 }
 
-.tarjetaCliente nav:last-child a button:hover {
+.tarjetaCliente nav:last-child button:hover {
     background-color: #2F5196;
 }
