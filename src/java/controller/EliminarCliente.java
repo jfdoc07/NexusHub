@@ -12,27 +12,20 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Cliente;
-import model.Tienda;
 
 /**
- * Nombre del proyecto: NexusHub
- * Servlet encargado de la creación de usuarios a partir de datos enviados
- * desde formularios previos.
- ** Descripción del entorno:
- * Servidor: Apache Tomcat 11.0.18
- * Puerto: 8080
- * @author Juan Fernando Cárdenas Duque.
+ *
+ * @author jfcar
  */
-@WebServlet(name = "ClienteServlet", urlPatterns = {"/ClienteServlet"})
-public class ClienteServlet extends HttpServlet {
-    
-    private DBclientes dbclientes;
-    
+@WebServlet(name = "EliminarCliente", urlPatterns = {"/EliminarCliente"})
+public class EliminarCliente extends HttpServlet {
+
+    private DBclientes dbClientes;
+
     @Override
     public void init() throws ServletException {
-      dbclientes = new DBclientes();
-      System.out.println("Conexion a dbclientes hecha");
+        dbClientes = new DBclientes();
+        System.out.println("Conexion a dbclientes hecha");
     }
 
     /**
@@ -47,6 +40,18 @@ public class ClienteServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet EliminarCliente</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet EliminarCliente at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -62,12 +67,6 @@ public class ClienteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        String realizarAcciones = request.getParameter("realizarAcciones");
-        if ("alquilar".equals(realizarAcciones)){
-            
-        }
-        
-        
     }
 
     /**
@@ -81,23 +80,10 @@ public class ClienteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-        String nombreCliente = almacenarDato(request, "nombreCliente");
-        String numContactoCliente = almacenarDato(request, "numContactoCliente");
-        String membresia = almacenarDato(request, "membresia");
-        Cliente cliente = new Cliente(nombreCliente, numContactoCliente, membresia);
-        dbclientes.insertarCliente(cliente);
-        /*tienda.agregarCliente(cliente);*/
-        /*Respetando el SOLID, el cliente es agregado por tienda y no desde el
-        servlet.*/
-        request.getRequestDispatcher("registroClientes.html").forward(request, 
-                                                                      response);
-    }
-
-    protected String almacenarDato(HttpServletRequest request, String nameForm) {
-        /*Principio DRY*/
-        String dato = request.getParameter(nameForm);
-        return dato;
+        String id = request.getParameter("id");
+        System.out.println("ID recibido: " + id);
+        dbClientes.eliminarCliente(id);
+        response.sendRedirect("index.html");
     }
 
     /**

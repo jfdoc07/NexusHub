@@ -26,6 +26,13 @@ public class Cliente {
         this.numContacto = numContacto;
         this.membresia = membresia;
     }
+    
+    public Cliente(){
+        ID = "";
+        nombre = "";
+        numContacto = "";
+        membresia = "";
+    }
 
     public String getID() {
         return ID;
@@ -45,6 +52,22 @@ public class Cliente {
 
     public List<Producto> getProductosAlquilados() {
         return productosAlquilados;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setNumContacto(String numContacto) {
+        this.numContacto = numContacto;
+    }
+
+    public void setMembresia(String membresia) {
+        this.membresia = membresia;
     }
     
 }
